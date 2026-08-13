@@ -9,13 +9,17 @@
 <meta property="og:title" content="{% block og_title %}PDF압축 - 무료 PDF 용량 줄이기{% endblock %}">
 <meta property="og:description" content="{% block og_description %}회원가입 없이 무료로 PDF 용량을 줄여보세요.{% endblock %}">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8602848692420724" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">
-  <div class="container header-inner">
+  <div class="header-inner">
     <a class="logo" href="{{ url_for('index') }}">PDF<span>압축</span></a>
+    <p class="tagline">A Lichtbringer Tool</p>
     <nav class="nav">
       <a href="{{ url_for('index') }}">홈</a>
       <a href="{{ url_for('about') }}">소개</a>
@@ -30,7 +34,7 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
+  <div class="footer-inner">
     <p>&copy; {{ 2026 }} PDF압축. 모든 파일은 처리 후 자동 삭제됩니다.</p>
     <div class="footer-links">
       <a href="{{ url_for('about') }}">소개</a>
@@ -38,6 +42,7 @@
       <a href="{{ url_for('terms') }}">이용약관</a>
     </div>
   </div>
+  <p class="footer-brand">Crafted by <a href="https://lichtbringer.online/" target="_blank" rel="noopener">Lichtbringer</a></p>
 </footer>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% block scripts %}{% endblock %}
