@@ -1,2 +1,1 @@
-# AdSense 승인 후 Google이 안내하는 실제 publisher ID로 교체하세요.
-# 예시: google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-8602848692420724, DIRECT, f08c47fec0942fa0
