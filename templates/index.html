@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="hero container">
-  <span class="eyebrow">TOOLS / PDF</span>
-  <h1>PDF 용량 줄이기</h1>
-  <p class="subtitle">파일을 올리면 몇 초 만에 압축해드려요. 회원가입도, 설치도 필요 없어요.</p>
+  <span class="eyebrow">{{ t.index.eyebrow }}</span>
+  <h1>{{ t.index.hero_title }}</h1>
+  <p class="subtitle">{{ t.index.hero_subtitle }}</p>
 
   <div id="drop-zone" class="drop-zone">
     <input type="file" id="file-input" accept="application/pdf" hidden>
     <div id="drop-zone-empty">
       <div class="drop-icon">📄</div>
-      <p><strong>PDF 파일을 여기로 끌어다 놓거나</strong></p>
-      <button type="button" id="browse-btn" class="btn btn-primary">파일 선택</button>
-      <p class="hint">최대 100MB까지 지원</p>
+      <p><strong>{{ t.index.drop_text }}</strong></p>
+      <button type="button" id="browse-btn" class="btn btn-primary">{{ t.index.browse_btn }}</button>
+      <p class="hint">{{ t.index.hint }}</p>
     </div>
 
     <div id="file-selected" class="hidden">
@@ -26,43 +26,43 @@
       <div class="quality-options">
         <label class="quality-option">
           <input type="radio" name="quality" value="high">
-          <span>고화질 <em>(압축률 낮음, 인쇄용)</em></span>
+          <span>{{ t.index.quality_high }} <em>({{ t.index.quality_high_desc }})</em></span>
         </label>
         <label class="quality-option">
           <input type="radio" name="quality" value="medium" checked>
-          <span>권장 <em>(균형있는 압축)</em></span>
+          <span>{{ t.index.quality_medium }} <em>({{ t.index.quality_medium_desc }})</em></span>
         </label>
         <label class="quality-option">
           <input type="radio" name="quality" value="low">
-          <span>최대 압축 <em>(화면 보기용)</em></span>
+          <span>{{ t.index.quality_low }} <em>({{ t.index.quality_low_desc }})</em></span>
         </label>
       </div>
 
-      <button type="button" id="compress-btn" class="btn btn-primary btn-large">PDF 압축하기</button>
-      <button type="button" id="reset-btn" class="btn btn-text">다른 파일 선택</button>
+      <button type="button" id="compress-btn" class="btn btn-primary btn-large">{{ t.index.compress_btn }}</button>
+      <button type="button" id="reset-btn" class="btn btn-text">{{ t.index.reset_btn }}</button>
     </div>
 
     <div id="loading" class="hidden">
       <div class="spinner"></div>
-      <p>압축하는 중입니다...</p>
+      <p>{{ t.index.loading_text }}</p>
     </div>
 
     <div id="result" class="hidden">
       <div class="result-icon">✅</div>
-      <p class="result-title">압축이 완료되었습니다!</p>
+      <p class="result-title">{{ t.index.result_title }}</p>
       <div class="result-stats">
-        <div><span id="original-size"></span><small>원본</small></div>
+        <div><span id="original-size"></span><small>{{ t.index.original_label }}</small></div>
         <div class="arrow">→</div>
-        <div><span id="compressed-size"></span><small>압축 후</small></div>
+        <div><span id="compressed-size"></span><small>{{ t.index.compressed_label }}</small></div>
         <div class="ratio-badge" id="ratio-badge"></div>
       </div>
-      <a id="download-link" class="btn btn-primary btn-large" href="#">압축된 PDF 다운로드</a>
-      <button type="button" id="reset-btn-2" class="btn btn-text">다른 파일 압축하기</button>
+      <a id="download-link" class="btn btn-primary btn-large" href="#">{{ t.index.download_btn }}</a>
+      <button type="button" id="reset-btn-2" class="btn btn-text">{{ t.index.reset_btn2 }}</button>
     </div>
 
     <div id="error" class="hidden">
       <p class="error-text" id="error-text"></p>
-      <button type="button" id="reset-btn-3" class="btn btn-text">다시 시도</button>
+      <button type="button" id="reset-btn-3" class="btn btn-text">{{ t.index.retry_btn }}</button>
     </div>
   </div>
 
@@ -72,34 +72,32 @@
 
 <section class="features container">
   <div class="feature">
-    <h3>안전한 처리</h3>
-    <p>업로드된 파일은 압축 후 서버에서 자동으로 삭제됩니다.</p>
+    <h3>{{ t.index.feature1_title }}</h3>
+    <p>{{ t.index.feature1_desc }}</p>
   </div>
   <div class="feature">
-    <h3>빠른 속도</h3>
-    <p>대부분의 파일은 몇 초 안에 압축이 완료됩니다.</p>
+    <h3>{{ t.index.feature2_title }}</h3>
+    <p>{{ t.index.feature2_desc }}</p>
   </div>
   <div class="feature">
-    <h3>무료</h3>
-    <p>회원가입, 워터마크, 사용 횟수 제한 없이 무료로 사용하세요.</p>
+    <h3>{{ t.index.feature3_title }}</h3>
+    <p>{{ t.index.feature3_desc }}</p>
   </div>
 </section>
 
 <section class="faq container">
-  <h2>자주 묻는 질문</h2>
+  <h2>{{ t.index.faq_heading }}</h2>
   <details>
-    <summary>업로드한 PDF는 안전한가요?</summary>
-    <p>압축이 끝나고 다운로드가 완료되면 파일은 서버에서 자동 삭제됩니다. 자세한 내용은 개인정보처리방침을 참고하세요.</p>
+    <summary>{{ t.index.faq1_q }}</summary>
+    <p>{{ t.index.faq1_a }}</p>
   </details>
   <details>
-    <summary>어떤 압축 옵션을 선택해야 하나요?</summary>
-    <p>일반적인 문서 공유용이라면 '권장'을, 화면에서만 볼 파일이라면 '최대 압축'을, 인쇄가 필요하다면 '고화질'을 선택하세요.</p>
+    <summary>{{ t.index.faq2_q }}</summary>
+    <p>{{ t.index.faq2_a }}</p>
   </details>
   <details>
-    <summary>파일 용량 제한이 있나요?</summary>
-    <p>최대 100MB까지 업로드할 수 있습니다.</p>
+    <summary>{{ t.index.faq3_q }}</summary>
+    <p>{{ t.index.faq3_a }}</p>
   </details>
 </section>
 {% endblock %}
-
-{% block title %}PDF압축 - 무료로 PDF 용량 줄이기{% endblock %}
